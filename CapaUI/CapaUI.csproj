@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21F3E638-54EE-4EB0-8707-3DFE7624AEC8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaUI</RootNamespace>
+    <AssemblyName>CapaUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ferreteriaDataSet.cs">
+      <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ferreteriaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UiCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiCliente.Designer.cs">
+      <DependentUpon>UiCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UImenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UImenu.Designer.cs">
+      <DependentUpon>UImenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiProducto.Designer.cs">
+      <DependentUpon>UiProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiProveedor.Designer.cs">
+      <DependentUpon>UiProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiUsuario.Designer.cs">
+      <DependentUpon>UiUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiVenta.Designer.cs">
+      <DependentUpon>UiVenta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UImenu.resx">
+      <DependentUpon>UImenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiProducto.resx">
+      <DependentUpon>UiProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiProveedor.resx">
+      <DependentUpon>UiProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServiceProducto\CapaUI.ServiceProducto.ServiceinsertarproductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.wsdl" />
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.Proveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.ServcioactualizarProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.ServiciobuscaConcidenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.ServiciobuscaProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.ServicioeliminarProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaUI.ServiceProveedor.ServicioinsertarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.wsdl" />
+    <None Include="ferreteriaDataSet.xsc">
+      <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ferreteriaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ferreteriaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ferreteriaDataSet.xss">
+      <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111-1114675_user-login-person-man-enter-person-login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.disco" />
+    <None Include="Connected Services\ServiceProveedor\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceProveedor\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.disco" />
+    <None Include="Connected Services\ServiceProducto\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceProducto\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\iconfinder_2931181_lines_list_menu_checklist_navigation_icon.ico" />
+    <Content Include="Resources\iconfinder_511942_lock_login_protection_secure_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceProveedor\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

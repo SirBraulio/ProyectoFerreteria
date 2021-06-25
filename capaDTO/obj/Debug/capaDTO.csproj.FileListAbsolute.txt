@@ -1,0 +1,6 @@
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\bin\Debug\capaDTO.dll
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\bin\Debug\capaDTO.pdb
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\obj\Debug\capaDTO.csproj.AssemblyReference.cache
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\obj\Debug\capaDTO.csproj.CoreCompileInputs.cache
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\obj\Debug\capaDTO.dll
+C:\Users\sirbr\Documents\ProyectoFerreteria\capaDTO\obj\Debug\capaDTO.pdb

@@ -1,0 +1,82 @@
+/*Script Braulio F. - Wladimir B.// */
+
+/* DROP DATABASE ferreteria */
+CREATE DATABASE ferreteria;
+GO
+USE ferreteria;
+GO
+
+
+CREATE TABLE proveedor(
+	idProveedor varchar(6) primary key not null,
+	nombreProv varchar(50) not null,
+	numeroProv int not null,
+	correoProv varchar(50) not null,
+);
+
+
+CREATE TABLE compra(
+	idCompra int not null IDENTITY(1,1) PRIMARY KEY,
+	idProveedor varchar(6) not null,
+	FOREIGN KEY (idProveedor) REFERENCES proveedor(idProveedor),
+)
+
+
+
+CREATE TABLE producto(
+	idProducto varchar (6) primary key not null,
+	precioUnitario int not null,
+	idProveedor varchar(6) not null,
+	tipoProducto varchar(20)not null,
+	caracteristica varchar(20),
+	marca varchar(20)not null,
+);
+
+CREATE TABLE detalleCompra(
+	idDetalleCompra int not null IDENTITY(1,1) PRIMARY KEY,
+	idCompra int not null,
+	idProducto varchar (6) not null,
+	FOREIGN KEY (idCompra) REFERENCES compra(idCompra),
+	FOREIGN KEY (idProducto) REFERENCES producto(idProducto),
+)
+
+CREATE TABLE stock(
+	idStock int not null IDENTITY(1,1) PRIMARY KEY,
+	idDetalleCompra int not null,
+	cantidad int not null,
+	FOREIGN KEY (idDetalleCompra) REFERENCES detalleCompra(idDetalleCompra),
+)
+
+CREATE TABLE usuario(
+	idUsuario int not null IDENTITY(1,1),
+	usuario varchar(50),
+	contraseña varchar(50),
+	nombre varchar(50),
+	correo varchar(100)
+);
+
+
+
+CREATE TABLE cliente(
+	idCliente int not null IDENTITY(1,1) primary key,
+	rutCliente varchar(14) ,
+	nombre varchar(20),
+	numeroCelular int,
+	cantCompras int
+)
+
+CREATE TABLE venta (
+	idVenta int not null IDENTITY(1,1) PRIMARY KEY,
+	idCliente int,
+	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente),
+);
+
+create Table detalleVenta(
+	idDetalleVenta int not null IDENTITY(1,1) PRIMARY KEY,
+	idVenta int not null,
+	idStock int not null,
+	cantidad int not null,
+	total int not null,
+	FOREIGN KEY (idStock) REFERENCES stock(idStock),
+	FOREIGN KEY (idVenta) REFERENCES venta(idVenta),
+)
