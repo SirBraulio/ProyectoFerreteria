@@ -28,6 +28,12 @@ namespace CapaUI
         {
 
         }
+        private void limpiar() {
+            txtIdProv.Text = "";
+            txtNameProv.Text = "";
+            txtNumberProv.Text = "";
+            txtCorreo.Text = "";
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -55,7 +61,7 @@ namespace CapaUI
                     new_prov.Nombre_prov = this.txtNameProv.Text;
                     new_prov.Numero_prov = Convert.ToInt32(this.txtNumberProv.Text);
                     new_prov.CorreoProv = this.txtCorreo.Text;
-
+                    limpiar();
                     Aux_newProv.ServicioinsertarProveedor(new_prov);
                     this.proveedorTableAdapter.Fill(this.ferreteriaDataSet.proveedor);
                     MessageBox.Show("Datos Guardados ", "Mensaje Sistema");
@@ -102,7 +108,7 @@ namespace CapaUI
                             string iddeleted = this.txtIdProv.Text;
                             Aux_negProv.ServicioeliminarProv(iddeleted);
                             MessageBox.Show("Datos Eliminados Satisfactoriamente ", "Mensaje Sistema");
-                            //limpiar();
+                            limpiar();
                             this.proveedorTableAdapter.Fill(this.ferreteriaDataSet.proveedor);
                         }
                         else
@@ -158,7 +164,7 @@ namespace CapaUI
 
                         Aux_negProv.ServcioactualizarProv(new_proc);
                         MessageBox.Show("Datos Guardados ", "Mensaje Sistema");
-                        //limpiar();
+                        limpiar();
                         this.proveedorTableAdapter.Fill(this.ferreteriaDataSet.proveedor);
                     }
                 }

@@ -20,6 +20,34 @@
         </s:sequence>
       </s:complexType>
       <s:element name="ServiceinsertarproductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceinsertarproductoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicebuscaProd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicebuscaProdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicebuscaProdResult" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceActualizaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceActualizaProductoResponse">
         <s:complexType />
       </s:element>
     </s:schema>
@@ -30,11 +58,33 @@
   <wsdl:message name="ServiceinsertarproductoSoapOut">
     <wsdl:part name="parameters" element="tns:ServiceinsertarproductoResponse" />
   </wsdl:message>
+  <wsdl:message name="ServicebuscaProdSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicebuscaProd" />
+  </wsdl:message>
+  <wsdl:message name="ServicebuscaProdSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicebuscaProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActualizaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceActualizaProducto" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActualizaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceActualizaProductoResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceProductoSoap">
     <wsdl:operation name="Serviceinsertarproducto">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta el producto </wsdl:documentation>
       <wsdl:input message="tns:ServiceinsertarproductoSoapIn" />
       <wsdl:output message="tns:ServiceinsertarproductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que busca el producto por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServicebuscaProdSoapIn" />
+      <wsdl:output message="tns:ServicebuscaProdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizaProducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que busca el producto por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServiceActualizaProductoSoapIn" />
+      <wsdl:output message="tns:ServiceActualizaProductoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceProductoSoap" type="tns:WebServiceProductoSoap">
@@ -48,11 +98,47 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProd">
+      <soap:operation soapAction="http://tempuri.org/ServicebuscaProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizaProducto">
+      <soap:operation soapAction="http://tempuri.org/ServiceActualizaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceProductoSoap12" type="tns:WebServiceProductoSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Serviceinsertarproducto">
       <soap12:operation soapAction="http://tempuri.org/Serviceinsertarproducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProd">
+      <soap12:operation soapAction="http://tempuri.org/ServicebuscaProd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizaProducto">
+      <soap12:operation soapAction="http://tempuri.org/ServiceActualizaProducto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -147,6 +147,20 @@ namespace CapaUI.ServiceProducto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Serviceinsertarproducto", ReplyAction="*")]
         System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServiceinsertarproductoResponse> ServiceinsertarproductoAsync(CapaUI.ServiceProducto.ServiceinsertarproductoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicebuscaProd", ReplyAction="*")]
+        CapaUI.ServiceProducto.ServicebuscaProdResponse ServicebuscaProd(CapaUI.ServiceProducto.ServicebuscaProdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicebuscaProd", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServicebuscaProdResponse> ServicebuscaProdAsync(CapaUI.ServiceProducto.ServicebuscaProdRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento producto del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaProducto", ReplyAction="*")]
+        CapaUI.ServiceProducto.ServiceActualizaProductoResponse ServiceActualizaProducto(CapaUI.ServiceProducto.ServiceActualizaProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaProducto", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServiceActualizaProductoResponse> ServiceActualizaProductoAsync(CapaUI.ServiceProducto.ServiceActualizaProductoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -203,10 +217,146 @@ namespace CapaUI.ServiceProducto {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class ServiceinsertarproductoResponseBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ServiceinsertarproductoResult;
+        
         public ServiceinsertarproductoResponseBody() {
+        }
+        
+        public ServiceinsertarproductoResponseBody(bool ServiceinsertarproductoResult) {
+            this.ServiceinsertarproductoResult = ServiceinsertarproductoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicebuscaProdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicebuscaProd", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceProducto.ServicebuscaProdRequestBody Body;
+        
+        public ServicebuscaProdRequest() {
+        }
+        
+        public ServicebuscaProdRequest(CapaUI.ServiceProducto.ServicebuscaProdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicebuscaProdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string producto;
+        
+        public ServicebuscaProdRequestBody() {
+        }
+        
+        public ServicebuscaProdRequestBody(string producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicebuscaProdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicebuscaProdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceProducto.ServicebuscaProdResponseBody Body;
+        
+        public ServicebuscaProdResponse() {
+        }
+        
+        public ServicebuscaProdResponse(CapaUI.ServiceProducto.ServicebuscaProdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicebuscaProdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CapaUI.ServiceProducto.Producto ServicebuscaProdResult;
+        
+        public ServicebuscaProdResponseBody() {
+        }
+        
+        public ServicebuscaProdResponseBody(CapaUI.ServiceProducto.Producto ServicebuscaProdResult) {
+            this.ServicebuscaProdResult = ServicebuscaProdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServiceActualizaProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServiceActualizaProducto", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceProducto.ServiceActualizaProductoRequestBody Body;
+        
+        public ServiceActualizaProductoRequest() {
+        }
+        
+        public ServiceActualizaProductoRequest(CapaUI.ServiceProducto.ServiceActualizaProductoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServiceActualizaProductoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CapaUI.ServiceProducto.Producto producto;
+        
+        public ServiceActualizaProductoRequestBody() {
+        }
+        
+        public ServiceActualizaProductoRequestBody(CapaUI.ServiceProducto.Producto producto) {
+            this.producto = producto;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServiceActualizaProductoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServiceActualizaProductoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceProducto.ServiceActualizaProductoResponseBody Body;
+        
+        public ServiceActualizaProductoResponse() {
+        }
+        
+        public ServiceActualizaProductoResponse(CapaUI.ServiceProducto.ServiceActualizaProductoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class ServiceActualizaProductoResponseBody {
+        
+        public ServiceActualizaProductoResponseBody() {
         }
     }
     
@@ -242,11 +392,12 @@ namespace CapaUI.ServiceProducto {
             return base.Channel.Serviceinsertarproducto(request);
         }
         
-        public void Serviceinsertarproducto(CapaUI.ServiceProducto.Producto producto) {
+        public bool Serviceinsertarproducto(CapaUI.ServiceProducto.Producto producto) {
             CapaUI.ServiceProducto.ServiceinsertarproductoRequest inValue = new CapaUI.ServiceProducto.ServiceinsertarproductoRequest();
             inValue.Body = new CapaUI.ServiceProducto.ServiceinsertarproductoRequestBody();
             inValue.Body.producto = producto;
             CapaUI.ServiceProducto.ServiceinsertarproductoResponse retVal = ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).Serviceinsertarproducto(inValue);
+            return retVal.Body.ServiceinsertarproductoResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -259,6 +410,55 @@ namespace CapaUI.ServiceProducto {
             inValue.Body = new CapaUI.ServiceProducto.ServiceinsertarproductoRequestBody();
             inValue.Body.producto = producto;
             return ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).ServiceinsertarproductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CapaUI.ServiceProducto.ServicebuscaProdResponse CapaUI.ServiceProducto.WebServiceProductoSoap.ServicebuscaProd(CapaUI.ServiceProducto.ServicebuscaProdRequest request) {
+            return base.Channel.ServicebuscaProd(request);
+        }
+        
+        public CapaUI.ServiceProducto.Producto ServicebuscaProd(string producto) {
+            CapaUI.ServiceProducto.ServicebuscaProdRequest inValue = new CapaUI.ServiceProducto.ServicebuscaProdRequest();
+            inValue.Body = new CapaUI.ServiceProducto.ServicebuscaProdRequestBody();
+            inValue.Body.producto = producto;
+            CapaUI.ServiceProducto.ServicebuscaProdResponse retVal = ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).ServicebuscaProd(inValue);
+            return retVal.Body.ServicebuscaProdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServicebuscaProdResponse> CapaUI.ServiceProducto.WebServiceProductoSoap.ServicebuscaProdAsync(CapaUI.ServiceProducto.ServicebuscaProdRequest request) {
+            return base.Channel.ServicebuscaProdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServicebuscaProdResponse> ServicebuscaProdAsync(string producto) {
+            CapaUI.ServiceProducto.ServicebuscaProdRequest inValue = new CapaUI.ServiceProducto.ServicebuscaProdRequest();
+            inValue.Body = new CapaUI.ServiceProducto.ServicebuscaProdRequestBody();
+            inValue.Body.producto = producto;
+            return ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).ServicebuscaProdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CapaUI.ServiceProducto.ServiceActualizaProductoResponse CapaUI.ServiceProducto.WebServiceProductoSoap.ServiceActualizaProducto(CapaUI.ServiceProducto.ServiceActualizaProductoRequest request) {
+            return base.Channel.ServiceActualizaProducto(request);
+        }
+        
+        public void ServiceActualizaProducto(CapaUI.ServiceProducto.Producto producto) {
+            CapaUI.ServiceProducto.ServiceActualizaProductoRequest inValue = new CapaUI.ServiceProducto.ServiceActualizaProductoRequest();
+            inValue.Body = new CapaUI.ServiceProducto.ServiceActualizaProductoRequestBody();
+            inValue.Body.producto = producto;
+            CapaUI.ServiceProducto.ServiceActualizaProductoResponse retVal = ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).ServiceActualizaProducto(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServiceActualizaProductoResponse> CapaUI.ServiceProducto.WebServiceProductoSoap.ServiceActualizaProductoAsync(CapaUI.ServiceProducto.ServiceActualizaProductoRequest request) {
+            return base.Channel.ServiceActualizaProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CapaUI.ServiceProducto.ServiceActualizaProductoResponse> ServiceActualizaProductoAsync(CapaUI.ServiceProducto.Producto producto) {
+            CapaUI.ServiceProducto.ServiceActualizaProductoRequest inValue = new CapaUI.ServiceProducto.ServiceActualizaProductoRequest();
+            inValue.Body = new CapaUI.ServiceProducto.ServiceActualizaProductoRequestBody();
+            inValue.Body.producto = producto;
+            return ((CapaUI.ServiceProducto.WebServiceProductoSoap)(this)).ServiceActualizaProductoAsync(inValue);
         }
     }
 }

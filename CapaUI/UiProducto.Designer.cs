@@ -52,13 +52,11 @@ namespace CapaUI
             this.btnOcultar = new System.Windows.Forms.Button();
             this.btnMostrarL = new System.Windows.Forms.Button();
             this.brnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.txtTipoP = new System.Windows.Forms.TextBox();
             this.txtIdProv = new System.Windows.Forms.TextBox();
-            this.txtDiasV = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecioUni = new System.Windows.Forms.TextBox();
             this.txtIDProducto = new System.Windows.Forms.TextBox();
@@ -66,7 +64,6 @@ namespace CapaUI
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,6 +107,7 @@ namespace CapaUI
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 52;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // idProveedorDataGridViewTextBoxColumn
             // 
@@ -236,6 +234,7 @@ namespace CapaUI
             this.btnLimpiar.TabIndex = 50;
             this.btnLimpiar.Text = "Limpiar campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnOcultar
             // 
@@ -255,24 +254,17 @@ namespace CapaUI
             this.btnMostrarL.TabIndex = 48;
             this.btnMostrarL.Text = "Mostrar Lista";
             this.btnMostrarL.UseVisualStyleBackColor = true;
+            this.btnMostrarL.Click += new System.EventHandler(this.btnMostrarL_Click);
             // 
             // brnModificar
             // 
-            this.brnModificar.Location = new System.Drawing.Point(353, 241);
+            this.brnModificar.Location = new System.Drawing.Point(264, 241);
             this.brnModificar.Name = "brnModificar";
             this.brnModificar.Size = new System.Drawing.Size(119, 23);
             this.brnModificar.TabIndex = 47;
             this.brnModificar.Text = "Modificar";
             this.brnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(184, 241);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(119, 23);
-            this.btnEliminar.TabIndex = 46;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.brnModificar.Click += new System.EventHandler(this.brnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -286,7 +278,7 @@ namespace CapaUI
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(400, 211);
+            this.txtMarca.Location = new System.Drawing.Point(113, 191);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(161, 20);
             this.txtMarca.TabIndex = 44;
@@ -312,13 +304,6 @@ namespace CapaUI
             this.txtIdProv.Size = new System.Drawing.Size(161, 20);
             this.txtIdProv.TabIndex = 41;
             // 
-            // txtDiasV
-            // 
-            this.txtDiasV.Location = new System.Drawing.Point(113, 207);
-            this.txtDiasV.Name = "txtDiasV";
-            this.txtDiasV.Size = new System.Drawing.Size(171, 20);
-            this.txtDiasV.TabIndex = 40;
-            // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(113, 150);
@@ -343,74 +328,65 @@ namespace CapaUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(326, 210);
+            this.label8.Location = new System.Drawing.Point(52, 190);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 36;
-            this.label8.Text = "Marca";
+            this.label8.Text = "Marca *";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(326, 153);
+            this.label7.Location = new System.Drawing.Point(320, 153);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Caracteristica";
+            this.label7.Text = "Caracteristica ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(326, 59);
+            this.label6.Location = new System.Drawing.Point(319, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 34;
-            this.label6.Text = "Id Proveedor";
+            this.label6.Text = "Id Proveedor *";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 104);
+            this.label5.Location = new System.Drawing.Point(313, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 33;
-            this.label5.Text = "Tipo Producto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Dias Vencimiento";
+            this.label5.Text = "Tipo Producto *";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 157);
+            this.label3.Location = new System.Drawing.Point(41, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Cantidad";
+            this.label3.Text = "Cantidad *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 108);
+            this.label2.Location = new System.Drawing.Point(14, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Precio Unitario";
+            this.label2.Text = "Precio Unitario *";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 59);
+            this.label1.Location = new System.Drawing.Point(27, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Id Producto";
+            this.label1.Text = "Id Producto *";
             // 
             // dataGridView1
             // 
@@ -431,6 +407,7 @@ namespace CapaUI
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(822, 204);
             this.dataGridView1.TabIndex = 53;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // productoBindingSource
             // 
@@ -509,13 +486,11 @@ namespace CapaUI
             this.Controls.Add(this.btnOcultar);
             this.Controls.Add(this.btnMostrarL);
             this.Controls.Add(this.brnModificar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtCaracteristica);
             this.Controls.Add(this.txtTipoP);
             this.Controls.Add(this.txtIdProv);
-            this.Controls.Add(this.txtDiasV);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtPrecioUni);
             this.Controls.Add(this.txtIDProducto);
@@ -523,7 +498,6 @@ namespace CapaUI
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -562,13 +536,11 @@ namespace CapaUI
         private System.Windows.Forms.Button btnOcultar;
         private System.Windows.Forms.Button btnMostrarL;
         private System.Windows.Forms.Button brnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.TextBox txtTipoP;
         private System.Windows.Forms.TextBox txtIdProv;
-        private System.Windows.Forms.TextBox txtDiasV;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPrecioUni;
         private System.Windows.Forms.TextBox txtIDProducto;
@@ -576,7 +548,6 @@ namespace CapaUI
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

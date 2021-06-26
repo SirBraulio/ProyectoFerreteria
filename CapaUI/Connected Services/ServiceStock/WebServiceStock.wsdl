@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioinsertarCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="tns:DetalleCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleCompra">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCompra" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idproveedor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDetalleCompra" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdProducto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServicioinsertarCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioinsertarCompraResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioinsertarCompraDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="tns:DetalleCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioinsertarCompraDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioinsertarCompraDetalleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioinsertarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="tns:DetalleCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioinsertarStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioinsertarStockResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioBuscaLastCompra">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioBuscaLastCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioBuscaLastCompraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioBuscaLastDetalleCompra">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioBuscaLastDetalleCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioBuscaLastDetalleCompraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioinsertarCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarCompra" />
+  </wsdl:message>
+  <wsdl:message name="ServicioinsertarCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioinsertarCompraDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarCompraDetalle" />
+  </wsdl:message>
+  <wsdl:message name="ServicioinsertarCompraDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarCompraDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioinsertarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarStock" />
+  </wsdl:message>
+  <wsdl:message name="ServicioinsertarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioinsertarStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioBuscaLastCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioBuscaLastCompra" />
+  </wsdl:message>
+  <wsdl:message name="ServicioBuscaLastCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioBuscaLastCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioBuscaLastDetalleCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioBuscaLastDetalleCompra" />
+  </wsdl:message>
+  <wsdl:message name="ServicioBuscaLastDetalleCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioBuscaLastDetalleCompraResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceStockSoap">
+    <wsdl:operation name="ServicioinsertarCompra">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta una compra </wsdl:documentation>
+      <wsdl:input message="tns:ServicioinsertarCompraSoapIn" />
+      <wsdl:output message="tns:ServicioinsertarCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarCompraDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta una compra detalle </wsdl:documentation>
+      <wsdl:input message="tns:ServicioinsertarCompraDetalleSoapIn" />
+      <wsdl:output message="tns:ServicioinsertarCompraDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta un stock </wsdl:documentation>
+      <wsdl:input message="tns:ServicioinsertarStockSoapIn" />
+      <wsdl:output message="tns:ServicioinsertarStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastCompra">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Busca la ultima compra </wsdl:documentation>
+      <wsdl:input message="tns:ServicioBuscaLastCompraSoapIn" />
+      <wsdl:output message="tns:ServicioBuscaLastCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastDetalleCompra">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Busca la ultima Detallecompra </wsdl:documentation>
+      <wsdl:input message="tns:ServicioBuscaLastDetalleCompraSoapIn" />
+      <wsdl:output message="tns:ServicioBuscaLastDetalleCompraSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceStockSoap" type="tns:WebServiceStockSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioinsertarCompra">
+      <soap:operation soapAction="http://tempuri.org/ServicioinsertarCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarCompraDetalle">
+      <soap:operation soapAction="http://tempuri.org/ServicioinsertarCompraDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarStock">
+      <soap:operation soapAction="http://tempuri.org/ServicioinsertarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastCompra">
+      <soap:operation soapAction="http://tempuri.org/ServicioBuscaLastCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastDetalleCompra">
+      <soap:operation soapAction="http://tempuri.org/ServicioBuscaLastDetalleCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceStockSoap12" type="tns:WebServiceStockSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioinsertarCompra">
+      <soap12:operation soapAction="http://tempuri.org/ServicioinsertarCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarCompraDetalle">
+      <soap12:operation soapAction="http://tempuri.org/ServicioinsertarCompraDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioinsertarStock">
+      <soap12:operation soapAction="http://tempuri.org/ServicioinsertarStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastCompra">
+      <soap12:operation soapAction="http://tempuri.org/ServicioBuscaLastCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioBuscaLastDetalleCompra">
+      <soap12:operation soapAction="http://tempuri.org/ServicioBuscaLastDetalleCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceStock">
+    <wsdl:port name="WebServiceStockSoap" binding="tns:WebServiceStockSoap">
+      <soap:address location="https://localhost:44376/WebServiceStock.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceStockSoap12" binding="tns:WebServiceStockSoap12">
+      <soap12:address location="https://localhost:44376/WebServiceStock.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

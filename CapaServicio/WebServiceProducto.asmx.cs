@@ -20,10 +20,23 @@ namespace CapaServicio
     {
 
         [WebMethod(Description = "Metodo que Inserta el producto ")]
-        public void Serviceinsertarproducto(Producto producto)
+        public bool Serviceinsertarproducto(Producto producto)
+        {
+            NegocioProducto auxn = new NegocioProducto();            
+            return auxn.insertarproducto(producto);
+        }
+
+        [WebMethod(Description = "Metodo que busca el producto por su id")]
+        public Producto ServicebuscaProd(String producto)
         {
             NegocioProducto auxn = new NegocioProducto();
-            auxn.insertarproducto(producto);
+            return auxn.buscaProd(producto);
+        }
+        [WebMethod(Description = "Metodo que actualiza el producto por su id")]
+        public void ServiceActualizaProducto(Producto producto)
+        {
+            NegocioProducto auxn = new NegocioProducto();
+            auxn.actualizarProducto(producto);
         }
     }
 }

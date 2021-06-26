@@ -29,7 +29,7 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                this.Conec.CadenaSQL = "INSERT INTO proveedor(idProveedor ,nombreProv ,numeroProv,correoProv)VALUES ('"+ proveedor.Idproveedor +"','"+proveedor.Nombre_prov+"',"+proveedor.Numero_prov+",'"+proveedor.CorreoProv+"')";
+                this.Conec.CadenaSQL = "INSERT INTO proveedor(idProveedor ,nombreProv ,numeroProv,correoProv) VALUES ('"+ proveedor.Idproveedor +"','"+proveedor.Nombre_prov+"',"+proveedor.Numero_prov+",'"+ proveedor.CorreoProv +"')";
                 this.Conec.EsSelect = false;
                 this.Conec.conectar();
                 return true;
