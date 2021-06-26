@@ -4,3 +4,8 @@ C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.pdb
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\bin\Debug\CapaConexion.dll
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Wladidi\Desktop\ferreteria\ProyectoFerreteria\CapaConexion\bin\Debug\CapaConexion.dll
+C:\Users\Wladidi\Desktop\ferreteria\ProyectoFerreteria\CapaConexion\bin\Debug\CapaConexion.pdb
+C:\Users\Wladidi\Desktop\ferreteria\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\Wladidi\Desktop\ferreteria\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\Wladidi\Desktop\ferreteria\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.pdb

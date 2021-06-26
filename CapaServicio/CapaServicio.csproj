@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
     <Content Include="WebServiceProducto.asmx" />
     <Content Include="WebServiceProveedor.asmx" />
+    <Content Include="WebServiceUsuario.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +80,10 @@
     </Compile>
     <Compile Include="WebServiceProveedor.asmx.cs">
       <DependentUpon>WebServiceProveedor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceUsuario.asmx.cs">
+      <DependentUpon>WebServiceUsuario.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

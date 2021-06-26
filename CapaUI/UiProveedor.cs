@@ -217,5 +217,10 @@ namespace CapaUI
             UImenu pventana = new UImenu();
             pventana.ShowDialog();
         }
+
+        private void txtIdProv_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

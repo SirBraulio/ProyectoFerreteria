@@ -58,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServiceUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ferreteriaDataSet.cs">
       <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
     </Compile>
@@ -132,6 +137,9 @@
     <EmbeddedResource Include="UiProveedor.resx">
       <DependentUpon>UiProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UiUsuario.resx">
+      <DependentUpon>UiUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\ServiceProducto\CapaUI.ServiceProducto.ServiceinsertarproductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -155,6 +163,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.wsdl" />
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioActualizarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioBuscarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioEliminarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioInsertarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\WebServiceUsuario.wsdl" />
     <None Include="ferreteriaDataSet.xsc">
       <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
     </None>
@@ -197,6 +221,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ServiceUsuario\WebServiceUsuario.disco" />
+    <None Include="Connected Services\ServiceUsuario\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceUsuario\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resources\iconfinder_2931181_lines_list_menu_checklist_navigation_icon.ico" />
     <Content Include="Resources\iconfinder_511942_lock_login_protection_secure_icon.ico" />
   </ItemGroup>
@@ -206,6 +237,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

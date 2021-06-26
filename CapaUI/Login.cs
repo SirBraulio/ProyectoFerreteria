@@ -44,5 +44,10 @@ namespace CapaUI
                 txtContra.PasswordChar = '*';
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
