@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioBuscarDetalleCompraPorIdProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idProducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioBuscarDetalleCompraPorIdProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioBuscarDetalleCompraPorIdProductoResult" type="tns:DetalleCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleCompra">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCompra" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idproveedor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDetalleCompra" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdProducto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioBuscarDetalleCompraPorIdProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioBuscarDetalleCompraPorIdProducto" />
+  </wsdl:message>
+  <wsdl:message name="ServicioBuscarDetalleCompraPorIdProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioBuscarDetalleCompraPorIdProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceDetalleCompraSoap">
+    <wsdl:operation name="ServicioBuscarDetalleCompraPorIdProducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que obtiene un detalle de compra por idProducto </wsdl:documentation>
+      <wsdl:input message="tns:ServicioBuscarDetalleCompraPorIdProductoSoapIn" />
+      <wsdl:output message="tns:ServicioBuscarDetalleCompraPorIdProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceDetalleCompraSoap" type="tns:WebServiceDetalleCompraSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioBuscarDetalleCompraPorIdProducto">
+      <soap:operation soapAction="http://tempuri.org/ServicioBuscarDetalleCompraPorIdProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceDetalleCompraSoap12" type="tns:WebServiceDetalleCompraSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioBuscarDetalleCompraPorIdProducto">
+      <soap12:operation soapAction="http://tempuri.org/ServicioBuscarDetalleCompraPorIdProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceDetalleCompra">
+    <wsdl:port name="WebServiceDetalleCompraSoap" binding="tns:WebServiceDetalleCompraSoap">
+      <soap:address location="https://localhost:44376/WebServiceDetalleCompra.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceDetalleCompraSoap12" binding="tns:WebServiceDetalleCompraSoap12">
+      <soap12:address location="https://localhost:44376/WebServiceDetalleCompra.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

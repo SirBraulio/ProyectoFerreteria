@@ -12,6 +12,8 @@ namespace CapaUI
 {
     public partial class Login : Form
     {
+        ServiceUsuario.WebServiceUsuarioSoapClient auxUsuario = new ServiceUsuario.WebServiceUsuarioSoapClient();
+
         public Login()
         {
             InitializeComponent();
@@ -19,14 +21,23 @@ namespace CapaUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Admin" && txtContra.Text == "123")
+            if (txtUsuario.Text.Length >= 1  && txtContra.Text.Length >= 1)
             {
-                this.Hide();
-                UImenu pProv = new UImenu();
-                pProv.ShowDialog();
+                bool puedeIngresar = auxUsuario.ServicioLoginUsuario(txtUsuario.Text, txtContra.Text);
+                if(puedeIngresar == true)
+                {
+                    this.Hide();
+                    UImenu pProv = new UImenu();
+                    pProv.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales invalidas.", "Mensaje Sistema");
+                }
+                
             }
             else {
-                MessageBox.Show("El usuario y contraseña no coinciden. reintenlo o comuniquese con el administrador para mas info ", "Mensaje Sistema");
+                MessageBox.Show("Ingresa un correo y una contraseña para iniciar sesión", "Mensaje Sistema");
             }
         }
 
@@ -43,6 +54,11 @@ namespace CapaUI
             {
                 txtContra.PasswordChar = '*';
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

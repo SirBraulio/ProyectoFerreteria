@@ -28,36 +28,6 @@ namespace CapaUI
             UiProducto pCliente = new UiProducto();
             pCliente.Show();
         }
-        /*
-        private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void irAAdminnistracionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void irAMenuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }*/
         
         private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -66,12 +36,6 @@ namespace CapaUI
         pCliente.Show();
         }
 
-        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        this.Hide();
-        UiUsuario pCliente = new UiUsuario();
-        pCliente.Show();
-        }
 
         private void irAAdminnistracionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,12 +44,6 @@ namespace CapaUI
         pCliente.Show();
         }
 
-        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        this.Hide();
-        UiVenta pCliente = new UiVenta();
-        pCliente.Show();
-        }
 
         private void irAMenuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -104,5 +62,18 @@ namespace CapaUI
         Application.Exit();
         }
 
+        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiUsuario pUsuario = new UiUsuario();
+            pUsuario.ShowDialog();
+        }
+
+        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiVenta pVenta = new UiVenta();
+            pVenta.ShowDialog();
+        }
     }
 }

@@ -99,6 +99,7 @@ namespace CapaUI
             this.Name = "Login";
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

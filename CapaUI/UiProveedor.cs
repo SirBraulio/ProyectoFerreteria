@@ -260,5 +260,10 @@ namespace CapaUI
         {
             Application.Exit();
         }
+
+        private void txtIdProv_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

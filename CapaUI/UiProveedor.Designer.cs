@@ -212,6 +212,7 @@ namespace CapaUI
             this.txtIdProv.Name = "txtIdProv";
             this.txtIdProv.Size = new System.Drawing.Size(206, 20);
             this.txtIdProv.TabIndex = 31;
+            this.txtIdProv.TextChanged += new System.EventHandler(this.txtIdProv_TextChanged);
             // 
             // label3
             // 
