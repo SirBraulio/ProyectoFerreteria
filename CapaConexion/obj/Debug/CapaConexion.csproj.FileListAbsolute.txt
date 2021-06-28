@@ -1,6 +1,0 @@
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\bin\Debug\CapaConexion.pdb
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.csproj.AssemblyReference.cache
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.pdb
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\bin\Debug\CapaConexion.dll
-C:\Users\sirbr\Documents\ProyectoFerreteria\CapaConexion\obj\Debug\CapaConexion.dll
