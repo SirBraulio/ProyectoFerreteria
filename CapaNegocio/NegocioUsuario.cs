@@ -28,7 +28,7 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                this.Conec.CadenaSQL = "INSERT INTO usuario(usuario ,contraseña, nombre, correo)VALUES ('" + usuario.User + "','" + usuario.Contraseña + "'," + usuario.Nombre + ",'" + usuario.Correo + "')";
+                this.Conec.CadenaSQL = "INSERT INTO usuario (usuario ,contraseña ,nombre ,correo) VALUES ('" + usuario.User + "','" + usuario.Contraseña + "','" + usuario.Nombre + "','" + usuario.Correo + "')";
                 this.Conec.EsSelect = false;
                 this.Conec.conectar();
                 return true;
@@ -37,7 +37,7 @@ namespace CapaNegocio
             {
                 Console.WriteLine("Datos no guardados " + ex.Message, "Mensaje Sistema");
 
-                return false; ;
+                return false;
             }
         }
 
@@ -83,5 +83,26 @@ namespace CapaNegocio
             this.Conec.EsSelect = false;
             this.Conec.conectar();
         } // Fin Actualizar
+
+        public bool logearUsuario(String correo, String password)
+        {
+            this.configurarConexion();
+            this.Conec.CadenaSQL = "SELECT * FROM usuario"
+                                   + " WHERE correo = '" + correo + "' AND contraseña =  '" + password + "';";
+            this.Conec.EsSelect = true;
+            this.Conec.conectar();
+            DataTable dt = new DataTable();
+            dt = this.conec.DbDataSet.Tables[0];
+
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

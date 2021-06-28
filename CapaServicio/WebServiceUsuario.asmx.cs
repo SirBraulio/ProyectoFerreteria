@@ -44,5 +44,12 @@ namespace CapaServicio
             NegocioUsuario auxn = new NegocioUsuario();
             auxn.actualizarUsuario(usuario);
         }
+
+        [WebMethod(Description = "Metodo que logea a un usuario por sus parametros")]
+        public Boolean ServicioLoginUsuario(string correo, string contraseña)
+        {
+            NegocioUsuario auxn = new NegocioUsuario();
+            return auxn.logearUsuario(correo, contraseña);
+        }
     }
 }

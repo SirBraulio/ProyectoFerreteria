@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a518589c-ce1f-4418-90a9-89c3a0c0ce80" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b878e6ef-3628-4f44-9fde-288ee4e36640" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://localhost:44376/WebServiceUsuario.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost:44376/WebServiceDetalleCompra.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WebServiceUsuario.wsdl" MetadataType="Wsdl" ID="72b0eb0d-7ce0-4826-b1e6-b629bea642f1" SourceId="1" SourceUrl="https://localhost:44376/WebServiceUsuario.asmx?wsdl" />
-    <MetadataFile FileName="WebServiceUsuario.disco" MetadataType="Disco" ID="d7f57c86-fd3f-4aed-9a6e-e53915b1f26e" SourceId="1" SourceUrl="https://localhost:44376/WebServiceUsuario.asmx?disco" />
+    <MetadataFile FileName="WebServiceDetalleCompra.disco" MetadataType="Disco" ID="e7a7cce1-5bf9-4828-b9cd-647c1d962b25" SourceId="1" SourceUrl="https://localhost:44376/WebServiceDetalleCompra.asmx?disco" />
+    <MetadataFile FileName="WebServiceDetalleCompra.wsdl" MetadataType="Wsdl" ID="5ffdbe86-1aa6-49f4-957e-043d0ee435ca" SourceId="1" SourceUrl="https://localhost:44376/WebServiceDetalleCompra.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

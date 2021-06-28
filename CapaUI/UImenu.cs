@@ -47,5 +47,12 @@ namespace CapaUI
             UiUsuario pUsuario = new UiUsuario();
             pUsuario.ShowDialog();
         }
+
+        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiVenta pVenta = new UiVenta();
+            pVenta.ShowDialog();
+        }
     }
 }

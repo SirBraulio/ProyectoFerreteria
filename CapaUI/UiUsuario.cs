@@ -12,13 +12,15 @@ namespace CapaUI
 {
     public partial class UiUsuario : Form
     {
+        ServiceUsuario.WebServiceUsuarioSoapClient auxUsuario = new ServiceUsuario.WebServiceUsuarioSoapClient();
+
         public int idUsuario = -1;
         public UiUsuario()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void UiUsuario_Load(object sender, EventArgs e)
         {
@@ -46,7 +48,7 @@ namespace CapaUI
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
-            if(idUsuario == -1)
+            if (idUsuario == -1)
             {
                 MessageBox.Show("Para actualizar un usuario, primero debes seleccionarlo en la lista.");
                 buttonActualizar.Enabled = false;
@@ -57,7 +59,33 @@ namespace CapaUI
             }
             else
             {
-                MessageBox.Show("Puede actualizar.");
+                try
+                {
+                    if (check_isValid(textBoxUsuario.Text, "El usuario debe tener un tamaño minimo de 5 caracteres.", 4) == false) return;
+
+                    if (check_isValid(textBoxNombre.Text, "El nombre debe tener un tamaño minimo de 5 caracteres", 4) == false) return;
+
+                    if (check_isValid(textBoxCorreo.Text, "El correo debe tener un tamaño minimo de 5 caracteres", 4) == false) return;
+
+                    if (check_isValid(textBoxPassword.Text, "La contraseña debe tener un tamaño minimo de 6 caracteres", 5) == false) return;
+
+                    ServiceUsuario.Usuario user = new ServiceUsuario.Usuario();
+
+                    user.User = textBoxUsuario.Text;
+                    user.Nombre = textBoxNombre.Text;
+                    user.Correo = textBoxCorreo.Text;
+                    user.Contraseña = textBoxPassword.Text;
+                    user.IdUsuario = idUsuario;
+
+                    auxUsuario.ServicioActualizarUsuario(user);
+                    this.usuarioTableAdapter.Fill(this.ferreteriaDataSet.usuario);
+                    MessageBox.Show("Datos Guardados", "Mensaje Sistema");
+                    limpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Datos No Guardados " + ex.Message, "Mensaje Sistema");
+                }
             }
         }
 
@@ -74,7 +102,7 @@ namespace CapaUI
             }
             else
             {
-                ServiceUsuario.WebServiceUsuarioSoapClient auxUsuario = new ServiceUsuario.WebServiceUsuarioSoapClient();
+
                 auxUsuario.ServicioEliminarUsuario(idUsuario.ToString());
                 this.usuarioTableAdapter.Fill(this.ferreteriaDataSet.usuario);
                 limpiarCampos();
@@ -108,9 +136,49 @@ namespace CapaUI
             idUsuario = -1;
         }
 
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
 
+        private void buttonCrear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (check_isValid(textBoxUsuario.Text, "El usuario debe tener un tamaño minimo de 5 caracteres.", 4) == false) return;
+
+                if (check_isValid(textBoxNombre.Text, "El nombre debe tener un tamaño minimo de 5 caracteres", 4) == false) return;
+
+                if (check_isValid(textBoxCorreo.Text, "El correo debe tener un tamaño minimo de 5 caracteres", 4) == false) return;
+
+                if (check_isValid(textBoxPassword.Text, "La contraseña debe tener un tamaño minimo de 6 caracteres", 5) == false) return;
+
+                ServiceUsuario.Usuario new_user = new ServiceUsuario.Usuario();
+                
+                new_user.User = textBoxUsuario.Text;
+                new_user.Nombre = textBoxNombre.Text;
+                new_user.Correo = textBoxCorreo.Text;
+                new_user.Contraseña = textBoxPassword.Text;
+
+                auxUsuario.ServicioInsertarUsuario(new_user);
+
+                this.usuarioTableAdapter.Fill(this.ferreteriaDataSet.usuario);
+                MessageBox.Show("Datos Guardados", "Mensaje Sistema");
+                limpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Datos No Guardados " + ex.Message, "Mensaje Sistema");
+            }
         }
+
+        private bool check_isValid(string param, string mensaje, int tamañoDeseado)
+        {
+            if (param.Trim().Length < tamañoDeseado)
+            {
+                MessageBox.Show(mensaje);
+                return false;
+            }
+            else return true;
+        }
+
+
     }
 }

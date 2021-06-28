@@ -97,6 +97,7 @@ namespace CapaUI
             this.irANuevaVentaToolStripMenuItem.Name = "irANuevaVentaToolStripMenuItem";
             this.irANuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irANuevaVentaToolStripMenuItem.Text = "Ir a Nueva Venta";
+            this.irANuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.irANuevaVentaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

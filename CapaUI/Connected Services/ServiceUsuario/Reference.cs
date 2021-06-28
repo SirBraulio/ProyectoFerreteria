@@ -152,6 +152,13 @@ namespace CapaUI.ServiceUsuario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioActualizarUsuario", ReplyAction="*")]
         System.Threading.Tasks.Task<CapaUI.ServiceUsuario.ServicioActualizarUsuarioResponse> ServicioActualizarUsuarioAsync(CapaUI.ServiceUsuario.ServicioActualizarUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento correo del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioLoginUsuario", ReplyAction="*")]
+        CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse ServicioLoginUsuario(CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioLoginUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse> ServicioLoginUsuarioAsync(CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -412,6 +419,78 @@ namespace CapaUI.ServiceUsuario {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioLoginUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioLoginUsuario", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceUsuario.ServicioLoginUsuarioRequestBody Body;
+        
+        public ServicioLoginUsuarioRequest() {
+        }
+        
+        public ServicioLoginUsuarioRequest(CapaUI.ServiceUsuario.ServicioLoginUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioLoginUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string correo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string contraseña;
+        
+        public ServicioLoginUsuarioRequestBody() {
+        }
+        
+        public ServicioLoginUsuarioRequestBody(string correo, string contraseña) {
+            this.correo = correo;
+            this.contraseña = contraseña;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioLoginUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioLoginUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceUsuario.ServicioLoginUsuarioResponseBody Body;
+        
+        public ServicioLoginUsuarioResponse() {
+        }
+        
+        public ServicioLoginUsuarioResponse(CapaUI.ServiceUsuario.ServicioLoginUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioLoginUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ServicioLoginUsuarioResult;
+        
+        public ServicioLoginUsuarioResponseBody() {
+        }
+        
+        public ServicioLoginUsuarioResponseBody(bool ServicioLoginUsuarioResult) {
+            this.ServicioLoginUsuarioResult = ServicioLoginUsuarioResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceUsuarioSoapChannel : CapaUI.ServiceUsuario.WebServiceUsuarioSoap, System.ServiceModel.IClientChannel {
     }
@@ -535,6 +614,33 @@ namespace CapaUI.ServiceUsuario {
             inValue.Body = new CapaUI.ServiceUsuario.ServicioActualizarUsuarioRequestBody();
             inValue.Body.usuario = usuario;
             return ((CapaUI.ServiceUsuario.WebServiceUsuarioSoap)(this)).ServicioActualizarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse CapaUI.ServiceUsuario.WebServiceUsuarioSoap.ServicioLoginUsuario(CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest request) {
+            return base.Channel.ServicioLoginUsuario(request);
+        }
+        
+        public bool ServicioLoginUsuario(string correo, string contraseña) {
+            CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest inValue = new CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest();
+            inValue.Body = new CapaUI.ServiceUsuario.ServicioLoginUsuarioRequestBody();
+            inValue.Body.correo = correo;
+            inValue.Body.contraseña = contraseña;
+            CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse retVal = ((CapaUI.ServiceUsuario.WebServiceUsuarioSoap)(this)).ServicioLoginUsuario(inValue);
+            return retVal.Body.ServicioLoginUsuarioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse> CapaUI.ServiceUsuario.WebServiceUsuarioSoap.ServicioLoginUsuarioAsync(CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest request) {
+            return base.Channel.ServicioLoginUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse> ServicioLoginUsuarioAsync(string correo, string contraseña) {
+            CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest inValue = new CapaUI.ServiceUsuario.ServicioLoginUsuarioRequest();
+            inValue.Body = new CapaUI.ServiceUsuario.ServicioLoginUsuarioRequestBody();
+            inValue.Body.correo = correo;
+            inValue.Body.contraseña = contraseña;
+            return ((CapaUI.ServiceUsuario.WebServiceUsuarioSoap)(this)).ServicioLoginUsuarioAsync(inValue);
         }
     }
 }

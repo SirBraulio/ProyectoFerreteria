@@ -59,6 +59,21 @@
       <s:element name="ServicioActualizarUsuarioResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ServicioLoginUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioLoginUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioLoginUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServicioInsertarUsuarioSoapIn">
@@ -85,6 +100,12 @@
   <wsdl:message name="ServicioActualizarUsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:ServicioActualizarUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="ServicioLoginUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioLoginUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ServicioLoginUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioLoginUsuarioResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceUsuarioSoap">
     <wsdl:operation name="ServicioInsertarUsuario">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta un nuevo usuario </wsdl:documentation>
@@ -105,6 +126,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que actualiza o modifica a un usuario por su id </wsdl:documentation>
       <wsdl:input message="tns:ServicioActualizarUsuarioSoapIn" />
       <wsdl:output message="tns:ServicioActualizarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioLoginUsuario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que logea a un usuario por sus parametros</wsdl:documentation>
+      <wsdl:input message="tns:ServicioLoginUsuarioSoapIn" />
+      <wsdl:output message="tns:ServicioLoginUsuarioSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceUsuarioSoap" type="tns:WebServiceUsuarioSoap">
@@ -145,6 +171,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServicioLoginUsuario">
+      <soap:operation soapAction="http://tempuri.org/ServicioLoginUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceUsuarioSoap12" type="tns:WebServiceUsuarioSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -177,6 +212,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServicioActualizarUsuario">
       <soap12:operation soapAction="http://tempuri.org/ServicioActualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioLoginUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ServicioLoginUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

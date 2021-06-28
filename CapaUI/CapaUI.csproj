@@ -140,6 +140,9 @@
     <EmbeddedResource Include="UiUsuario.resx">
       <DependentUpon>UiUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UiVenta.resx">
+      <DependentUpon>UiVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\ServiceProducto\CapaUI.ServiceProducto.ServiceinsertarproductoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -173,6 +176,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioInsertarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioLoginUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.Usuario.datasource">
