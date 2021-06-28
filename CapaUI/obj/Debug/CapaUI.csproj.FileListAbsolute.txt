@@ -11,3 +11,4 @@ C:\Users\sirbr\Documents\ProyectoFerreteria\CapaUI\obj\Debug\CapaUI.pdb
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaUI\obj\Debug\CapaUI.UImenu.resources
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaUI\obj\Debug\CapaUI.UiProducto.resources
 C:\Users\sirbr\Documents\ProyectoFerreteria\CapaUI\obj\Debug\CapaUI.UiProveedor.resources
+C:\Users\sirbr\Documents\ProyectoFerreteria\CapaUI\obj\Debug\CapaUI.UiCliente.resources

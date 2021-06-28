@@ -98,6 +98,7 @@ namespace CapaUI
             this.irAMantenedorDeProductosToolStripMenuItem.Name = "irAMantenedorDeProductosToolStripMenuItem";
             this.irAMantenedorDeProductosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProductosToolStripMenuItem.Text = "Ir a Mantenedor de Productos";
+            this.irAMantenedorDeProductosToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProductosToolStripMenuItem_Click);
             // 
             // irAMantenedorDeProveedoresToolStripMenuItem
             // 
@@ -111,18 +112,21 @@ namespace CapaUI
             this.irAAdministracionDeUsuariosToolStripMenuItem.Name = "irAAdministracionDeUsuariosToolStripMenuItem";
             this.irAAdministracionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdministracionDeUsuariosToolStripMenuItem.Text = "Ir a Administracion de Usuarios";
+            this.irAAdministracionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.irAAdministracionDeUsuariosToolStripMenuItem_Click);
             // 
             // irAAdminnistracionDeClientesToolStripMenuItem
             // 
             this.irAAdminnistracionDeClientesToolStripMenuItem.Name = "irAAdminnistracionDeClientesToolStripMenuItem";
             this.irAAdminnistracionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdminnistracionDeClientesToolStripMenuItem.Text = "Ir a Administracion de Clientes";
+            this.irAAdminnistracionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.irAAdminnistracionDeClientesToolStripMenuItem_Click);
             // 
             // irANuevaVentaToolStripMenuItem
             // 
             this.irANuevaVentaToolStripMenuItem.Name = "irANuevaVentaToolStripMenuItem";
             this.irANuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irANuevaVentaToolStripMenuItem.Text = "Ir a Nueva Venta";
+            this.irANuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.irANuevaVentaToolStripMenuItem_Click);
             // 
             // irAMenuPrincipalToolStripMenuItem
             // 

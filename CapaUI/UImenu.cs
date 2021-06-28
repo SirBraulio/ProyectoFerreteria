@@ -19,26 +19,90 @@ namespace CapaUI
 
         private void UImenu_Load(object sender, EventArgs e)
         {
+             
+        }
 
+        private void irAMantenedorDeProductosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiProducto pCliente = new UiProducto();
+            pCliente.Show();
+        }
+        /*
+        private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void irAAdminnistracionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void irAMenuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }*/
+        
+        private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        this.Hide();
+        UiProveedor pCliente = new UiProveedor();
+        pCliente.Show();
+        }
+
+        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        this.Hide();
+        UiUsuario pCliente = new UiUsuario();
+        pCliente.Show();
+        }
+
+        private void irAAdminnistracionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        this.Hide();
+        UiCliente pCliente = new UiCliente();
+        pCliente.Show();
+        }
+
+        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        this.Hide();
+        UiVenta pCliente = new UiVenta();
+        pCliente.Show();
+        }
+
+        private void irAMenuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        this.Hide();
+        UImenu pCliente = new UImenu();
+        pCliente.Show();
         }
 
         private void salirAltF4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+        Application.Exit();
+        }
+        
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+        Application.Exit();
         }
 
-        private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UiProveedor pProducto = new UiProveedor();
-            pProducto.ShowDialog();
-        }
-
-        private void irAMantenedorDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UiProducto pProducto = new UiProducto();
-            pProducto.ShowDialog();
-        }
     }
 }

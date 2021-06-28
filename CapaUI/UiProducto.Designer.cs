@@ -68,26 +68,26 @@ namespace CapaUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedorTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.proveedorTableAdapter();
-            this.productoTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.productoTableAdapter();
-            this.productoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.caracteristicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedorTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.proveedorTableAdapter();
+            this.productoTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.productoTableAdapter();
+            this.productoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferreteriaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ferreteriaDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView2
@@ -181,36 +181,42 @@ namespace CapaUI
             this.irAMantenedorDeProductosToolStripMenuItem.Name = "irAMantenedorDeProductosToolStripMenuItem";
             this.irAMantenedorDeProductosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProductosToolStripMenuItem.Text = "Ir a Mantenedor de Productos";
+            this.irAMantenedorDeProductosToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProductosToolStripMenuItem_Click);
             // 
             // irAMantenedorDeProveedoresToolStripMenuItem
             // 
             this.irAMantenedorDeProveedoresToolStripMenuItem.Name = "irAMantenedorDeProveedoresToolStripMenuItem";
             this.irAMantenedorDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProveedoresToolStripMenuItem.Text = "Ir a Mantenedor de Proveedores";
+            this.irAMantenedorDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProveedoresToolStripMenuItem_Click);
             // 
             // irAAdministracionDeUsuariosToolStripMenuItem
             // 
             this.irAAdministracionDeUsuariosToolStripMenuItem.Name = "irAAdministracionDeUsuariosToolStripMenuItem";
             this.irAAdministracionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdministracionDeUsuariosToolStripMenuItem.Text = "Ir a Administracion de Usuarios";
+            this.irAAdministracionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.irAAdministracionDeUsuariosToolStripMenuItem_Click);
             // 
             // irAAdminnistracionDeClientesToolStripMenuItem
             // 
             this.irAAdminnistracionDeClientesToolStripMenuItem.Name = "irAAdminnistracionDeClientesToolStripMenuItem";
             this.irAAdminnistracionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdminnistracionDeClientesToolStripMenuItem.Text = "Ir a Administracion de Clientes";
+            this.irAAdminnistracionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.irAAdminnistracionDeClientesToolStripMenuItem_Click);
             // 
             // irANuevaVentaToolStripMenuItem
             // 
             this.irANuevaVentaToolStripMenuItem.Name = "irANuevaVentaToolStripMenuItem";
             this.irANuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irANuevaVentaToolStripMenuItem.Text = "Ir a Nueva Venta";
+            this.irANuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.irANuevaVentaToolStripMenuItem_Click);
             // 
             // irAMenuPrincipalToolStripMenuItem
             // 
             this.irAMenuPrincipalToolStripMenuItem.Name = "irAMenuPrincipalToolStripMenuItem";
             this.irAMenuPrincipalToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMenuPrincipalToolStripMenuItem.Text = "Ir a Menu Principal";
+            this.irAMenuPrincipalToolStripMenuItem.Click += new System.EventHandler(this.irAMenuPrincipalToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -225,6 +231,7 @@ namespace CapaUI
             this.salirAltF4ToolStripMenuItem.Name = "salirAltF4ToolStripMenuItem";
             this.salirAltF4ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.salirAltF4ToolStripMenuItem.Text = "Salir                     alt+F4";
+            this.salirAltF4ToolStripMenuItem.Click += new System.EventHandler(this.salirAltF4ToolStripMenuItem_Click);
             // 
             // btnLimpiar
             // 
@@ -409,29 +416,6 @@ namespace CapaUI
             this.dataGridView1.TabIndex = 53;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataMember = "producto";
-            this.productoBindingSource.DataSource = this.ferreteriaDataSetBindingSource;
-            // 
-            // proveedorTableAdapter
-            // 
-            this.proveedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // productoTableAdapter
-            // 
-            this.productoTableAdapter.ClearBeforeFill = true;
-            // 
-            // productoBindingSource1
-            // 
-            this.productoBindingSource1.DataMember = "producto";
-            this.productoBindingSource1.DataSource = this.ferreteriaDataSetBindingSource;
-            // 
-            // productoBindingSource2
-            // 
-            this.productoBindingSource2.DataMember = "producto";
-            this.productoBindingSource2.DataSource = this.ferreteriaDataSetBindingSource;
-            // 
             // idProductoDataGridViewTextBoxColumn
             // 
             this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
@@ -474,6 +458,29 @@ namespace CapaUI
             this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
             this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // productoBindingSource2
+            // 
+            this.productoBindingSource2.DataMember = "producto";
+            this.productoBindingSource2.DataSource = this.ferreteriaDataSetBindingSource;
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataMember = "producto";
+            this.productoBindingSource.DataSource = this.ferreteriaDataSetBindingSource;
+            // 
+            // proveedorTableAdapter
+            // 
+            this.proveedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // productoTableAdapter
+            // 
+            this.productoTableAdapter.ClearBeforeFill = true;
+            // 
+            // productoBindingSource1
+            // 
+            this.productoBindingSource1.DataMember = "producto";
+            this.productoBindingSource1.DataSource = this.ferreteriaDataSetBindingSource;
+            // 
             // UiProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,9 +518,9 @@ namespace CapaUI
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

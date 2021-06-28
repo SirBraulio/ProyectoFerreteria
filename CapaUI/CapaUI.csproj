@@ -48,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceProducto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UiCliente.resx">
+      <DependentUpon>UiCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UImenu.resx">
       <DependentUpon>UImenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +145,19 @@
     <EmbeddedResource Include="UiProveedor.resx">
       <DependentUpon>UiProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceCliente\CapaUI.ServiceCliente.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaUI.ServiceCliente.ServiceactualizarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaUI.ServiceCliente.ServicebuscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaUI.ServiceCliente.ServiceinsertarproductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.wsdl" />
     <None Include="Connected Services\ServiceProducto\CapaUI.ServiceProducto.Producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -228,6 +249,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.disco" />
+    <None Include="Connected Services\ServiceCliente\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceCliente\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resources\iconfinder_2931181_lines_list_menu_checklist_navigation_icon.ico" />
     <Content Include="Resources\iconfinder_511942_lock_login_protection_secure_icon.ico" />
   </ItemGroup>
@@ -235,6 +263,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceCliente\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProveedor\" />
     <WCFMetadataStorage Include="Connected Services\ServiceStock\" />

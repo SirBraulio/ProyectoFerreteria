@@ -230,5 +230,52 @@ namespace CapaUI
                 return;
             }
         }
+
+        private void irAMantenedorDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiProducto pCliente = new UiProducto();
+            pCliente.Show();
+        }
+
+        private void irAMantenedorDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiProveedor pCliente = new UiProveedor();
+            pCliente.Show();
+        }
+
+        private void irAAdministracionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiUsuario pCliente = new UiUsuario();
+            pCliente.Show();
+        }
+
+        private void irAAdminnistracionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiCliente pCliente = new UiCliente();
+            pCliente.Show();
+        }
+
+        private void irANuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UiVenta pCliente = new UiVenta();
+            pCliente.Show();
+        }
+
+        private void irAMenuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UImenu pCliente = new UImenu();
+            pCliente.Show();
+        }
+
+        private void salirAltF4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -68,12 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebServiceCliente.asmx" />
     <Content Include="WebServiceProducto.asmx" />
     <Content Include="WebServiceProveedor.asmx" />
     <Content Include="WebServiceStock.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceCliente.asmx.cs">
+      <DependentUpon>WebServiceCliente.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServiceProducto.asmx.cs">
       <DependentUpon>WebServiceProducto.asmx</DependentUpon>
       <SubType>Component</SubType>
