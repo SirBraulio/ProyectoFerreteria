@@ -1,6 +1,5 @@
 ﻿using CapaConexion;
 using capaDTO;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,13 +16,13 @@ namespace CapaNegocio
 
 
         public ConexionSQL Conec { get => conec; set => conec = value; }
-        string cadena = @"Data Source=DESKTOP-USSDBAG\SQLEXPRESS01;Initial Catalog=ferreteria;Integrated Security=True";
+        string cadena = @"Data Source=DESKTOP-1BL2V3H;Initial Catalog=ferreteria;Integrated Security=True";
         public void configurarConexion()
         {
             this.Conec = new ConexionSQL();
             this.Conec.NombreBaseDatos = "ferreteria";
             this.Conec.NombreTabla = "proveedor";
-            this.Conec.CadenaConexion = @"Data Source=DESKTOP-USSDBAG\SQLEXPRESS01;Initial Catalog=ferreteria;Integrated Security=True";
+            this.Conec.CadenaConexion = @"Data Source=DESKTOP-1BL2V3H;Initial Catalog=ferreteria;Integrated Security=True";
         }
 
         public Boolean insertarCompra(DetalleCompra detalle)
@@ -97,6 +96,7 @@ namespace CapaNegocio
             }
 
         } //Fin Busca
+
         public Boolean insertarStock(DetalleCompra detalle)
         {
             try
@@ -116,5 +116,41 @@ namespace CapaNegocio
                 return false; ;
             }
         }//Fin insertar
+
+        public Stock obtenerStockPorIdDetalleCompra(string idDetalle)
+        {
+            Stock auxStock = new Stock();
+            this.configurarConexion();
+            this.Conec.CadenaSQL = "SELECT * FROM stock"
+                                   + " WHERE idDetalleCompra = '" + idDetalle + "';";
+            this.Conec.EsSelect = true;
+            this.Conec.conectar();
+            DataTable dt = new DataTable();
+            dt = this.conec.DbDataSet.Tables[0];
+
+            if (dt.Rows.Count > 0)
+            {
+                auxStock.IdStock = (int)dt.Rows[0]["idStock"];
+                auxStock.IdDetalleCompra = (int)dt.Rows[0]["idDetalleCompra"];
+                auxStock.Cantidad = (int)dt.Rows[0]["cantidad"];
+            }
+            else
+            {
+                auxStock.IdStock = -1;
+                auxStock.IdDetalleCompra = -1;
+                auxStock.Cantidad = -1;
+            }
+
+            return auxStock;
+        }
+
+        public void actualizarStock(Stock stock)
+        {
+            this.configurarConexion();
+            this.Conec.CadenaSQL = "UPDATE stock SET cantidad = '"
+                                   + stock.Cantidad +  "' WHERE idStock = '" + stock.IdStock + "';";
+            this.Conec.EsSelect = false;
+            this.Conec.conectar();
+        }
     }
 }

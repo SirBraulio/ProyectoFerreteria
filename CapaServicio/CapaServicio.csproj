@@ -72,6 +72,7 @@
     <Content Include="WebServiceProveedor.asmx" />
     <Content Include="WebServiceUsuario.asmx" />
     <Content Include="WebServiceStock.asmx" />
+    <Content Include="WebServiceVenta.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +98,10 @@
     </Compile>
     <Compile Include="WebServiceUsuario.asmx.cs">
       <DependentUpon>WebServiceUsuario.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceVenta.asmx.cs">
+      <DependentUpon>WebServiceVenta.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServicioCrearVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="venta" type="tns:Venta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Venta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdVenta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCliente" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServicioCrearVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioCrearVentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerIdUltimaVenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicioObtenerIdUltimaVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioObtenerIdUltimaVentaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioCrearDetalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="tns:DetalleVenta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleVenta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdDetalleVenta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdVenta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServicioCrearDetalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServicioCrearDetalleVentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServicioCrearVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioCrearVenta" />
+  </wsdl:message>
+  <wsdl:message name="ServicioCrearVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioCrearVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerIdUltimaVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerIdUltimaVenta" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerIdUltimaVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerIdUltimaVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioCrearDetalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioCrearDetalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="ServicioCrearDetalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioCrearDetalleVentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceVentaSoap">
+    <wsdl:operation name="ServicioCrearVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que crea una nueva venta</wsdl:documentation>
+      <wsdl:input message="tns:ServicioCrearVentaSoapIn" />
+      <wsdl:output message="tns:ServicioCrearVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerIdUltimaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que obtiene el id de la ultima venta</wsdl:documentation>
+      <wsdl:input message="tns:ServicioObtenerIdUltimaVentaSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerIdUltimaVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCrearDetalleVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que crea un nuevo detalle de venta</wsdl:documentation>
+      <wsdl:input message="tns:ServicioCrearDetalleVentaSoapIn" />
+      <wsdl:output message="tns:ServicioCrearDetalleVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceVentaSoap" type="tns:WebServiceVentaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioCrearVenta">
+      <soap:operation soapAction="http://tempuri.org/ServicioCrearVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerIdUltimaVenta">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerIdUltimaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCrearDetalleVenta">
+      <soap:operation soapAction="http://tempuri.org/ServicioCrearDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceVentaSoap12" type="tns:WebServiceVentaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServicioCrearVenta">
+      <soap12:operation soapAction="http://tempuri.org/ServicioCrearVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerIdUltimaVenta">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerIdUltimaVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioCrearDetalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/ServicioCrearDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVenta">
+    <wsdl:port name="WebServiceVentaSoap" binding="tns:WebServiceVentaSoap">
+      <soap:address location="https://localhost:44376/WebServiceVenta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceVentaSoap12" binding="tns:WebServiceVentaSoap12">
+      <soap12:address location="https://localhost:44376/WebServiceVenta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

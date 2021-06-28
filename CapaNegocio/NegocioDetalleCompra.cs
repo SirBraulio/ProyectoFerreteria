@@ -21,12 +21,13 @@ namespace CapaNegocio
             this.Conec = new ConexionSQL();
             this.Conec.NombreBaseDatos = "ferreteria";
             this.Conec.NombreTabla = "detalleCompra";
-            this.Conec.CadenaConexion = @"Data Source=DESKTOP-USSDBAG\SQLEXPRESS01;Initial Catalog=ferreteria;Integrated Security=True";
+            this.Conec.CadenaConexion = @"Data Source=DESKTOP-1BL2V3H;Initial Catalog=ferreteria;Integrated Security=True";
         }
 
-        public DetalleCompra obtenerDetalleCompraPorIdProducto (string idProducto)
+        public DetalleDeCompra obtenerDetalleCompraPorIdProducto (string idProducto)
         {
-            DetalleCompra detalle = new DetalleCompra();
+            this.configurarConexion();
+            DetalleDeCompra detalle = new DetalleDeCompra();
             this.Conec.CadenaSQL = "SELECT * FROM detalleCompra"
                                    + " WHERE idProducto = '" + idProducto + "';";
             this.Conec.EsSelect = true;

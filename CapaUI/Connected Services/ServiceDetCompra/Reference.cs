@@ -15,26 +15,19 @@ namespace CapaUI.ServiceDetCompra {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DetalleCompra", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DetalleDeCompra", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class DetalleCompra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DetalleDeCompra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private int IdCompraField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdproveedorField;
-        
         private int IdDetalleCompraField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IdProductoField;
-        
-        private int IdStockField;
-        
-        private int CantidadField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -59,20 +52,7 @@ namespace CapaUI.ServiceDetCompra {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Idproveedor {
-            get {
-                return this.IdproveedorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IdproveedorField, value) != true)) {
-                    this.IdproveedorField = value;
-                    this.RaisePropertyChanged("Idproveedor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int IdDetalleCompra {
             get {
                 return this.IdDetalleCompraField;
@@ -85,7 +65,7 @@ namespace CapaUI.ServiceDetCompra {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string IdProducto {
             get {
                 return this.IdProductoField;
@@ -94,32 +74,6 @@ namespace CapaUI.ServiceDetCompra {
                 if ((object.ReferenceEquals(this.IdProductoField, value) != true)) {
                     this.IdProductoField = value;
                     this.RaisePropertyChanged("IdProducto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int IdStock {
-            get {
-                return this.IdStockField;
-            }
-            set {
-                if ((this.IdStockField.Equals(value) != true)) {
-                    this.IdStockField = value;
-                    this.RaisePropertyChanged("IdStock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Cantidad {
-            get {
-                return this.CantidadField;
-            }
-            set {
-                if ((this.CantidadField.Equals(value) != true)) {
-                    this.CantidadField = value;
-                    this.RaisePropertyChanged("Cantidad");
                 }
             }
         }
@@ -204,12 +158,12 @@ namespace CapaUI.ServiceDetCompra {
     public partial class ServicioBuscarDetalleCompraPorIdProductoResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public CapaUI.ServiceDetCompra.DetalleCompra ServicioBuscarDetalleCompraPorIdProductoResult;
+        public CapaUI.ServiceDetCompra.DetalleDeCompra ServicioBuscarDetalleCompraPorIdProductoResult;
         
         public ServicioBuscarDetalleCompraPorIdProductoResponseBody() {
         }
         
-        public ServicioBuscarDetalleCompraPorIdProductoResponseBody(CapaUI.ServiceDetCompra.DetalleCompra ServicioBuscarDetalleCompraPorIdProductoResult) {
+        public ServicioBuscarDetalleCompraPorIdProductoResponseBody(CapaUI.ServiceDetCompra.DetalleDeCompra ServicioBuscarDetalleCompraPorIdProductoResult) {
             this.ServicioBuscarDetalleCompraPorIdProductoResult = ServicioBuscarDetalleCompraPorIdProductoResult;
         }
     }
@@ -246,7 +200,7 @@ namespace CapaUI.ServiceDetCompra {
             return base.Channel.ServicioBuscarDetalleCompraPorIdProducto(request);
         }
         
-        public CapaUI.ServiceDetCompra.DetalleCompra ServicioBuscarDetalleCompraPorIdProducto(string idProducto) {
+        public CapaUI.ServiceDetCompra.DetalleDeCompra ServicioBuscarDetalleCompraPorIdProducto(string idProducto) {
             CapaUI.ServiceDetCompra.ServicioBuscarDetalleCompraPorIdProductoRequest inValue = new CapaUI.ServiceDetCompra.ServicioBuscarDetalleCompraPorIdProductoRequest();
             inValue.Body = new CapaUI.ServiceDetCompra.ServicioBuscarDetalleCompraPorIdProductoRequestBody();
             inValue.Body.idProducto = idProducto;

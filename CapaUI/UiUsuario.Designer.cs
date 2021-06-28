@@ -56,11 +56,11 @@ namespace CapaUI
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irAMantenedorDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irAMantenedorDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.irAAdministracionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irAAdminnistracionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irANuevaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.irAlMenúPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ferreteriaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -272,9 +272,9 @@ namespace CapaUI
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.irAMantenedorDeProductosToolStripMenuItem,
             this.irAMantenedorDeProveedoresToolStripMenuItem,
-            this.irAAdministracionDeUsuariosToolStripMenuItem,
             this.irAAdminnistracionDeClientesToolStripMenuItem,
-            this.irANuevaVentaToolStripMenuItem});
+            this.irANuevaVentaToolStripMenuItem,
+            this.irAlMenúPrincipalToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -284,30 +284,28 @@ namespace CapaUI
             this.irAMantenedorDeProductosToolStripMenuItem.Name = "irAMantenedorDeProductosToolStripMenuItem";
             this.irAMantenedorDeProductosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProductosToolStripMenuItem.Text = "Ir a Mantenedor de Productos";
+            this.irAMantenedorDeProductosToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProductosToolStripMenuItem_Click);
             // 
             // irAMantenedorDeProveedoresToolStripMenuItem
             // 
             this.irAMantenedorDeProveedoresToolStripMenuItem.Name = "irAMantenedorDeProveedoresToolStripMenuItem";
             this.irAMantenedorDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProveedoresToolStripMenuItem.Text = "Ir a Mantenedor de Proveedores";
-            // 
-            // irAAdministracionDeUsuariosToolStripMenuItem
-            // 
-            this.irAAdministracionDeUsuariosToolStripMenuItem.Name = "irAAdministracionDeUsuariosToolStripMenuItem";
-            this.irAAdministracionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.irAAdministracionDeUsuariosToolStripMenuItem.Text = "Ir a Administracion de Usuarios";
+            this.irAMantenedorDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProveedoresToolStripMenuItem_Click);
             // 
             // irAAdminnistracionDeClientesToolStripMenuItem
             // 
             this.irAAdminnistracionDeClientesToolStripMenuItem.Name = "irAAdminnistracionDeClientesToolStripMenuItem";
             this.irAAdminnistracionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdminnistracionDeClientesToolStripMenuItem.Text = "Ir a Administracion de Clientes";
+            this.irAAdminnistracionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.irAAdminnistracionDeClientesToolStripMenuItem_Click);
             // 
             // irANuevaVentaToolStripMenuItem
             // 
             this.irANuevaVentaToolStripMenuItem.Name = "irANuevaVentaToolStripMenuItem";
             this.irANuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irANuevaVentaToolStripMenuItem.Text = "Ir a Nueva Venta";
+            this.irANuevaVentaToolStripMenuItem.Click += new System.EventHandler(this.irANuevaVentaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -322,6 +320,14 @@ namespace CapaUI
             this.salirAltF4ToolStripMenuItem.Name = "salirAltF4ToolStripMenuItem";
             this.salirAltF4ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.salirAltF4ToolStripMenuItem.Text = "Salir                     alt+F4";
+            this.salirAltF4ToolStripMenuItem.Click += new System.EventHandler(this.salirAltF4ToolStripMenuItem_Click);
+            // 
+            // irAlMenúPrincipalToolStripMenuItem
+            // 
+            this.irAlMenúPrincipalToolStripMenuItem.Name = "irAlMenúPrincipalToolStripMenuItem";
+            this.irAlMenúPrincipalToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.irAlMenúPrincipalToolStripMenuItem.Text = "Ir al Menú Principal";
+            this.irAlMenúPrincipalToolStripMenuItem.Click += new System.EventHandler(this.irAlMenúPrincipalToolStripMenuItem_Click);
             // 
             // UiUsuario
             // 
@@ -383,10 +389,10 @@ namespace CapaUI
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irAMantenedorDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irAMantenedorDeProveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem irAAdministracionDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irAAdminnistracionDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irANuevaVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirAltF4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem irAlMenúPrincipalToolStripMenuItem;
     }
 }

@@ -20,7 +20,7 @@ namespace CapaServicio
     {
 
         [WebMethod(Description = "Metodo que obtiene un detalle de compra por idProducto ")]
-        public DetalleCompra ServicioBuscarDetalleCompraPorIdProducto(string idProducto)
+        public DetalleDeCompra ServicioBuscarDetalleCompraPorIdProducto(string idProducto)
         {
             NegocioDetalleCompra auxDetalle = new NegocioDetalleCompra();
             return auxDetalle.obtenerDetalleCompraPorIdProducto(idProducto);

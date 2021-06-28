@@ -68,12 +68,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServiceStock\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceUsuario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceStock\Reference.cs">
+    <Compile Include="Connected Services\ServiceVenta\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -168,7 +173,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceCliente\WebServiceCliente.wsdl" />
-    <None Include="Connected Services\ServiceDetCompra\CapaUI.ServiceDetCompra.DetalleCompra.datasource">
+    <None Include="Connected Services\ServiceDetCompra\CapaUI.ServiceDetCompra.DetalleDeCompra.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceDetCompra\CapaUI.ServiceDetCompra.ServicioBuscarDetalleCompraPorIdProductoResponse.datasource">
@@ -213,6 +218,25 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.wsdl" />
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioActualizarStockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarCompraDetalleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarStockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.Stock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceStock\WebServiceStock.wsdl" />
     <None Include="Connected Services\ServiceUsuario\CapaUI.ServiceUsuario.ServicioActualizarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -232,16 +256,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceUsuario\WebServiceUsuario.wsdl" />
-    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarCompraDetalleResponse.datasource">
+    <None Include="Connected Services\ServiceVenta\CapaUI.ServiceVenta.ServicioCrearDetalleVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarCompraResponse.datasource">
+    <None Include="Connected Services\ServiceVenta\CapaUI.ServiceVenta.ServicioCrearVentaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceStock\CapaUI.ServiceStock.ServicioinsertarStockResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceStock\WebServiceStock.wsdl" />
+    <None Include="Connected Services\ServiceVenta\WebServiceVenta.wsdl" />
     <None Include="ferreteriaDataSet.xsc">
       <DependentUpon>ferreteriaDataSet.xsd</DependentUpon>
     </None>
@@ -291,13 +312,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ServiceStock\WebServiceStock.disco" />
-    <None Include="Connected Services\ServiceStock\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceStock\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceStock\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ServiceCliente\WebServiceCliente.disco" />
     <None Include="Connected Services\ServiceCliente\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceCliente\configuration.svcinfo" />
@@ -312,6 +326,20 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ServiceVenta\WebServiceVenta.disco" />
+    <None Include="Connected Services\ServiceVenta\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceVenta\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceVenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceStock\WebServiceStock.disco" />
+    <None Include="Connected Services\ServiceStock\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceStock\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceStock\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resources\iconfinder_2931181_lines_list_menu_checklist_navigation_icon.ico" />
     <Content Include="Resources\iconfinder_511942_lock_login_protection_secure_icon.ico" />
   </ItemGroup>
@@ -323,8 +351,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiceDetCompra\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
     <WCFMetadataStorage Include="Connected Services\ServiceProveedor\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
     <WCFMetadataStorage Include="Connected Services\ServiceStock\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceVenta\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,7 +36,6 @@ namespace CapaUI
             this.irAMantenedorDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irAAdministracionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.irAAdminnistracionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.irANuevaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.clienteTableAdapter();
@@ -50,7 +49,6 @@ namespace CapaUI
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonMostrarClientes = new System.Windows.Forms.Button();
             this.buttonMostrarProducto = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.productoTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.productoTableAdapter();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,17 +64,22 @@ namespace CapaUI
             this.textBoxProducto = new System.Windows.Forms.TextBox();
             this.labelProducto = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.buttonVentas = new System.Windows.Forms.Button();
             this.detalleVentaTableAdapter = new CapaUI.ferreteriaDataSetTableAdapters.detalleVentaTableAdapter();
             this.dataGridViewVentas = new System.Windows.Forms.DataGridView();
-            this.detalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDetalleVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalleVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonSumarCantidad = new System.Windows.Forms.Button();
+            this.buttonRestarCantidad = new System.Windows.Forms.Button();
+            this.labelValorCantidad = new System.Windows.Forms.Label();
+            this.buttonRegistrarVenta = new System.Windows.Forms.Button();
+            this.irAMenúPrincipalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ferreteriaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
@@ -105,7 +108,7 @@ namespace CapaUI
             this.irAMantenedorDeProveedoresToolStripMenuItem,
             this.irAAdministracionDeUsuariosToolStripMenuItem,
             this.irAAdminnistracionDeClientesToolStripMenuItem,
-            this.irANuevaVentaToolStripMenuItem});
+            this.irAMenúPrincipalToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -115,30 +118,28 @@ namespace CapaUI
             this.irAMantenedorDeProductosToolStripMenuItem.Name = "irAMantenedorDeProductosToolStripMenuItem";
             this.irAMantenedorDeProductosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProductosToolStripMenuItem.Text = "Ir a Mantenedor de Productos";
+            this.irAMantenedorDeProductosToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProductosToolStripMenuItem_Click);
             // 
             // irAMantenedorDeProveedoresToolStripMenuItem
             // 
             this.irAMantenedorDeProveedoresToolStripMenuItem.Name = "irAMantenedorDeProveedoresToolStripMenuItem";
             this.irAMantenedorDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAMantenedorDeProveedoresToolStripMenuItem.Text = "Ir a Mantenedor de Proveedores";
+            this.irAMantenedorDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.irAMantenedorDeProveedoresToolStripMenuItem_Click);
             // 
             // irAAdministracionDeUsuariosToolStripMenuItem
             // 
             this.irAAdministracionDeUsuariosToolStripMenuItem.Name = "irAAdministracionDeUsuariosToolStripMenuItem";
             this.irAAdministracionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdministracionDeUsuariosToolStripMenuItem.Text = "Ir a Administracion de Usuarios";
+            this.irAAdministracionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.irAAdministracionDeUsuariosToolStripMenuItem_Click);
             // 
             // irAAdminnistracionDeClientesToolStripMenuItem
             // 
             this.irAAdminnistracionDeClientesToolStripMenuItem.Name = "irAAdminnistracionDeClientesToolStripMenuItem";
             this.irAAdminnistracionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.irAAdminnistracionDeClientesToolStripMenuItem.Text = "Ir a Administracion de Clientes";
-            // 
-            // irANuevaVentaToolStripMenuItem
-            // 
-            this.irANuevaVentaToolStripMenuItem.Name = "irANuevaVentaToolStripMenuItem";
-            this.irANuevaVentaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.irANuevaVentaToolStripMenuItem.Text = "Ir a Nueva Venta";
+            this.irAAdminnistracionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.irAAdminnistracionDeClientesToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -153,6 +154,7 @@ namespace CapaUI
             this.salirAltF4ToolStripMenuItem.Name = "salirAltF4ToolStripMenuItem";
             this.salirAltF4ToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.salirAltF4ToolStripMenuItem.Text = "Salir                     alt+F4";
+            this.salirAltF4ToolStripMenuItem.Click += new System.EventHandler(this.salirAltF4ToolStripMenuItem_Click);
             // 
             // clienteTableAdapter
             // 
@@ -243,14 +245,6 @@ namespace CapaUI
             this.buttonMostrarProducto.Text = "Mostrar Producto";
             this.buttonMostrarProducto.UseVisualStyleBackColor = true;
             this.buttonMostrarProducto.Click += new System.EventHandler(this.buttonMostrarProducto_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(92, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 21);
-            this.comboBox1.TabIndex = 20;
             // 
             // productoTableAdapter
             // 
@@ -377,12 +371,13 @@ namespace CapaUI
             this.labelTotal.TabIndex = 27;
             this.labelTotal.Text = "Total";
             // 
-            // textBox1
+            // textBoxTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 161);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 28;
+            this.textBoxTotal.Enabled = false;
+            this.textBoxTotal.Location = new System.Drawing.Point(92, 161);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(152, 20);
+            this.textBoxTotal.TabIndex = 28;
             // 
             // buttonVentas
             // 
@@ -417,11 +412,6 @@ namespace CapaUI
             this.dataGridViewVentas.Size = new System.Drawing.Size(828, 150);
             this.dataGridViewVentas.TabIndex = 30;
             this.dataGridViewVentas.Visible = false;
-            // 
-            // detalleVentaBindingSource
-            // 
-            this.detalleVentaBindingSource.DataMember = "detalleVenta";
-            this.detalleVentaBindingSource.DataSource = this.ferreteriaDataSet;
             // 
             // idDetalleVentaDataGridViewTextBoxColumn
             // 
@@ -458,6 +448,11 @@ namespace CapaUI
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // detalleVentaBindingSource
+            // 
+            this.detalleVentaBindingSource.DataMember = "detalleVenta";
+            this.detalleVentaBindingSource.DataSource = this.ferreteriaDataSet;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -468,15 +463,67 @@ namespace CapaUI
             this.label1.Text = "Recuerda seleccionar el cliente y el producto dando doble click en una de las tab" +
     "las.";
             // 
+            // buttonSumarCantidad
+            // 
+            this.buttonSumarCantidad.Enabled = false;
+            this.buttonSumarCantidad.Location = new System.Drawing.Point(206, 117);
+            this.buttonSumarCantidad.Name = "buttonSumarCantidad";
+            this.buttonSumarCantidad.Size = new System.Drawing.Size(38, 23);
+            this.buttonSumarCantidad.TabIndex = 32;
+            this.buttonSumarCantidad.Text = "+";
+            this.buttonSumarCantidad.UseVisualStyleBackColor = true;
+            this.buttonSumarCantidad.Click += new System.EventHandler(this.buttonSumarCantidad_Click);
+            // 
+            // buttonRestarCantidad
+            // 
+            this.buttonRestarCantidad.Enabled = false;
+            this.buttonRestarCantidad.Location = new System.Drawing.Point(92, 117);
+            this.buttonRestarCantidad.Name = "buttonRestarCantidad";
+            this.buttonRestarCantidad.Size = new System.Drawing.Size(38, 23);
+            this.buttonRestarCantidad.TabIndex = 33;
+            this.buttonRestarCantidad.Text = "-";
+            this.buttonRestarCantidad.UseVisualStyleBackColor = true;
+            this.buttonRestarCantidad.Click += new System.EventHandler(this.buttonRestarCantidad_Click);
+            // 
+            // labelValorCantidad
+            // 
+            this.labelValorCantidad.AutoSize = true;
+            this.labelValorCantidad.Location = new System.Drawing.Point(164, 122);
+            this.labelValorCantidad.Name = "labelValorCantidad";
+            this.labelValorCantidad.Size = new System.Drawing.Size(13, 13);
+            this.labelValorCantidad.TabIndex = 34;
+            this.labelValorCantidad.Text = "0";
+            // 
+            // buttonRegistrarVenta
+            // 
+            this.buttonRegistrarVenta.Location = new System.Drawing.Point(262, 214);
+            this.buttonRegistrarVenta.Name = "buttonRegistrarVenta";
+            this.buttonRegistrarVenta.Size = new System.Drawing.Size(137, 23);
+            this.buttonRegistrarVenta.TabIndex = 35;
+            this.buttonRegistrarVenta.Text = "Registrar Venta";
+            this.buttonRegistrarVenta.UseVisualStyleBackColor = true;
+            this.buttonRegistrarVenta.Click += new System.EventHandler(this.buttonRegistrarVentaOnClick);
+            // 
+            // irAMenúPrincipalToolStripMenuItem
+            // 
+            this.irAMenúPrincipalToolStripMenuItem.Name = "irAMenúPrincipalToolStripMenuItem";
+            this.irAMenúPrincipalToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.irAMenúPrincipalToolStripMenuItem.Text = "Ir a Menú Principal";
+            this.irAMenúPrincipalToolStripMenuItem.Click += new System.EventHandler(this.irAMenúPrincipalToolStripMenuItem_Click);
+            // 
             // UiVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 451);
+            this.Controls.Add(this.buttonRegistrarVenta);
+            this.Controls.Add(this.labelValorCantidad);
+            this.Controls.Add(this.buttonRestarCantidad);
+            this.Controls.Add(this.buttonSumarCantidad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewVentas);
             this.Controls.Add(this.buttonVentas);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.labelProducto);
             this.Controls.Add(this.textBoxProducto);
@@ -484,7 +531,6 @@ namespace CapaUI
             this.Controls.Add(this.textBoxCliente);
             this.Controls.Add(this.labelCantidad);
             this.Controls.Add(this.dataGridViewProductos);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonMostrarProducto);
             this.Controls.Add(this.buttonMostrarClientes);
             this.Controls.Add(this.dataGridViewClientes);
@@ -514,7 +560,6 @@ namespace CapaUI
         private System.Windows.Forms.ToolStripMenuItem irAMantenedorDeProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irAAdministracionDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem irAAdminnistracionDeClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem irANuevaVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirAltF4ToolStripMenuItem;
         private ferreteriaDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
@@ -528,7 +573,6 @@ namespace CapaUI
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.Button buttonMostrarClientes;
         private System.Windows.Forms.Button buttonMostrarProducto;
-        private System.Windows.Forms.ComboBox comboBox1;
         private ferreteriaDataSetTableAdapters.productoTableAdapter productoTableAdapter;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
@@ -544,7 +588,7 @@ namespace CapaUI
         private System.Windows.Forms.TextBox textBoxProducto;
         private System.Windows.Forms.Label labelProducto;
         private System.Windows.Forms.Label labelTotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Button buttonVentas;
         private ferreteriaDataSetTableAdapters.detalleVentaTableAdapter detalleVentaTableAdapter;
         private System.Windows.Forms.DataGridView dataGridViewVentas;
@@ -555,5 +599,10 @@ namespace CapaUI
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource detalleVentaBindingSource;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSumarCantidad;
+        private System.Windows.Forms.Button buttonRestarCantidad;
+        private System.Windows.Forms.Label labelValorCantidad;
+        private System.Windows.Forms.Button buttonRegistrarVenta;
+        private System.Windows.Forms.ToolStripMenuItem irAMenúPrincipalToolStripMenuItem;
     }
 }

@@ -134,6 +134,80 @@ namespace CapaUI.ServiceStock {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Stock", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Stock : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdStockField;
+        
+        private int IdDetalleCompraField;
+        
+        private int CantidadField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int IdStock {
+            get {
+                return this.IdStockField;
+            }
+            set {
+                if ((this.IdStockField.Equals(value) != true)) {
+                    this.IdStockField = value;
+                    this.RaisePropertyChanged("IdStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int IdDetalleCompra {
+            get {
+                return this.IdDetalleCompraField;
+            }
+            set {
+                if ((this.IdDetalleCompraField.Equals(value) != true)) {
+                    this.IdDetalleCompraField = value;
+                    this.RaisePropertyChanged("IdDetalleCompra");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Cantidad {
+            get {
+                return this.CantidadField;
+            }
+            set {
+                if ((this.CantidadField.Equals(value) != true)) {
+                    this.CantidadField = value;
+                    this.RaisePropertyChanged("Cantidad");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceStock.WebServiceStockSoap")]
     public interface WebServiceStockSoap {
@@ -170,6 +244,20 @@ namespace CapaUI.ServiceStock {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioBuscaLastDetalleCompra", ReplyAction="*")]
         System.Threading.Tasks.Task<int> ServicioBuscaLastDetalleCompraAsync();
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idDetalle del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerStockPorIdDetalle", ReplyAction="*")]
+        CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse ServicioObtenerStockPorIdDetalle(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioObtenerStockPorIdDetalle", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse> ServicioObtenerStockPorIdDetalleAsync(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento stock del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioActualizarStock", ReplyAction="*")]
+        CapaUI.ServiceStock.ServicioActualizarStockResponse ServicioActualizarStock(CapaUI.ServiceStock.ServicioActualizarStockRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServicioActualizarStock", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioActualizarStockResponse> ServicioActualizarStockAsync(CapaUI.ServiceStock.ServicioActualizarStockRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -376,6 +464,135 @@ namespace CapaUI.ServiceStock {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerStockPorIdDetalleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerStockPorIdDetalle", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequestBody Body;
+        
+        public ServicioObtenerStockPorIdDetalleRequest() {
+        }
+        
+        public ServicioObtenerStockPorIdDetalleRequest(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerStockPorIdDetalleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string idDetalle;
+        
+        public ServicioObtenerStockPorIdDetalleRequestBody() {
+        }
+        
+        public ServicioObtenerStockPorIdDetalleRequestBody(string idDetalle) {
+            this.idDetalle = idDetalle;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioObtenerStockPorIdDetalleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioObtenerStockPorIdDetalleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponseBody Body;
+        
+        public ServicioObtenerStockPorIdDetalleResponse() {
+        }
+        
+        public ServicioObtenerStockPorIdDetalleResponse(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioObtenerStockPorIdDetalleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CapaUI.ServiceStock.Stock ServicioObtenerStockPorIdDetalleResult;
+        
+        public ServicioObtenerStockPorIdDetalleResponseBody() {
+        }
+        
+        public ServicioObtenerStockPorIdDetalleResponseBody(CapaUI.ServiceStock.Stock ServicioObtenerStockPorIdDetalleResult) {
+            this.ServicioObtenerStockPorIdDetalleResult = ServicioObtenerStockPorIdDetalleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioActualizarStockRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioActualizarStock", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceStock.ServicioActualizarStockRequestBody Body;
+        
+        public ServicioActualizarStockRequest() {
+        }
+        
+        public ServicioActualizarStockRequest(CapaUI.ServiceStock.ServicioActualizarStockRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ServicioActualizarStockRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CapaUI.ServiceStock.Stock stock;
+        
+        public ServicioActualizarStockRequestBody() {
+        }
+        
+        public ServicioActualizarStockRequestBody(CapaUI.ServiceStock.Stock stock) {
+            this.stock = stock;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ServicioActualizarStockResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ServicioActualizarStockResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CapaUI.ServiceStock.ServicioActualizarStockResponseBody Body;
+        
+        public ServicioActualizarStockResponse() {
+        }
+        
+        public ServicioActualizarStockResponse(CapaUI.ServiceStock.ServicioActualizarStockResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class ServicioActualizarStockResponseBody {
+        
+        public ServicioActualizarStockResponseBody() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceStockSoapChannel : CapaUI.ServiceStock.WebServiceStockSoap, System.ServiceModel.IClientChannel {
     }
@@ -492,6 +709,55 @@ namespace CapaUI.ServiceStock {
         
         public System.Threading.Tasks.Task<int> ServicioBuscaLastDetalleCompraAsync() {
             return base.Channel.ServicioBuscaLastDetalleCompraAsync();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse CapaUI.ServiceStock.WebServiceStockSoap.ServicioObtenerStockPorIdDetalle(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest request) {
+            return base.Channel.ServicioObtenerStockPorIdDetalle(request);
+        }
+        
+        public CapaUI.ServiceStock.Stock ServicioObtenerStockPorIdDetalle(string idDetalle) {
+            CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest inValue = new CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest();
+            inValue.Body = new CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequestBody();
+            inValue.Body.idDetalle = idDetalle;
+            CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse retVal = ((CapaUI.ServiceStock.WebServiceStockSoap)(this)).ServicioObtenerStockPorIdDetalle(inValue);
+            return retVal.Body.ServicioObtenerStockPorIdDetalleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse> CapaUI.ServiceStock.WebServiceStockSoap.ServicioObtenerStockPorIdDetalleAsync(CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest request) {
+            return base.Channel.ServicioObtenerStockPorIdDetalleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleResponse> ServicioObtenerStockPorIdDetalleAsync(string idDetalle) {
+            CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest inValue = new CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequest();
+            inValue.Body = new CapaUI.ServiceStock.ServicioObtenerStockPorIdDetalleRequestBody();
+            inValue.Body.idDetalle = idDetalle;
+            return ((CapaUI.ServiceStock.WebServiceStockSoap)(this)).ServicioObtenerStockPorIdDetalleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CapaUI.ServiceStock.ServicioActualizarStockResponse CapaUI.ServiceStock.WebServiceStockSoap.ServicioActualizarStock(CapaUI.ServiceStock.ServicioActualizarStockRequest request) {
+            return base.Channel.ServicioActualizarStock(request);
+        }
+        
+        public void ServicioActualizarStock(CapaUI.ServiceStock.Stock stock) {
+            CapaUI.ServiceStock.ServicioActualizarStockRequest inValue = new CapaUI.ServiceStock.ServicioActualizarStockRequest();
+            inValue.Body = new CapaUI.ServiceStock.ServicioActualizarStockRequestBody();
+            inValue.Body.stock = stock;
+            CapaUI.ServiceStock.ServicioActualizarStockResponse retVal = ((CapaUI.ServiceStock.WebServiceStockSoap)(this)).ServicioActualizarStock(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioActualizarStockResponse> CapaUI.ServiceStock.WebServiceStockSoap.ServicioActualizarStockAsync(CapaUI.ServiceStock.ServicioActualizarStockRequest request) {
+            return base.Channel.ServicioActualizarStockAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CapaUI.ServiceStock.ServicioActualizarStockResponse> ServicioActualizarStockAsync(CapaUI.ServiceStock.Stock stock) {
+            CapaUI.ServiceStock.ServicioActualizarStockRequest inValue = new CapaUI.ServiceStock.ServicioActualizarStockRequest();
+            inValue.Body = new CapaUI.ServiceStock.ServicioActualizarStockRequestBody();
+            inValue.Body.stock = stock;
+            return ((CapaUI.ServiceStock.WebServiceStockSoap)(this)).ServicioActualizarStockAsync(inValue);
         }
     }
 }

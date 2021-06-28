@@ -21,7 +21,7 @@ namespace CapaNegocio
             this.Conec = new ConexionSQL();
             this.Conec.NombreBaseDatos = "ferreteria";
             this.Conec.NombreTabla = "proveedor";
-            this.Conec.CadenaConexion = @"Data Source=DESKTOP-USSDBAG\SQLEXPRESS01;Initial Catalog=ferreteria;Integrated Security=True";
+            this.Conec.CadenaConexion = @"Data Source=DESKTOP-1BL2V3H;Initial Catalog=ferreteria;Integrated Security=True";
         }
 
         public Boolean insertarproducto(Producto producto)

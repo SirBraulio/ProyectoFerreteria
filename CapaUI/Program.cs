@@ -16,7 +16,7 @@ namespace CapaUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UImenu());
+            Application.Run(new Login());
         }
     }
 }

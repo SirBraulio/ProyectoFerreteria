@@ -49,5 +49,21 @@ namespace CapaServicio
             NegocioStock auxn = new NegocioStock();
             return auxn.buscaLastdetalle();
         }
+
+        [WebMethod(Description = "Metodo que devuelve un stock por idDetalleCompra")]
+
+        public Stock ServicioObtenerStockPorIdDetalle(string idDetalle)
+        {
+            NegocioStock auxStock = new NegocioStock();
+            return auxStock.obtenerStockPorIdDetalleCompra(idDetalle);
+        }
+
+        [WebMethod(Description = "Actualizar stock")]
+
+        public void ServicioActualizarStock(Stock stock)
+        {
+            NegocioStock auxStock = new NegocioStock();
+            auxStock.actualizarStock(stock);
+        }
     }
 }

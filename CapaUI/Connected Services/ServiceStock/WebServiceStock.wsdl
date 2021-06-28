@@ -74,6 +74,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ServicioObtenerStockPorIdDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idDetalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioObtenerStockPorIdDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicioObtenerStockPorIdDetalleResult" type="tns:Stock" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Stock">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdStock" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDetalleCompra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServicioActualizarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stock" type="tns:Stock" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicioActualizarStockResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServicioinsertarCompraSoapIn">
@@ -106,6 +137,18 @@
   <wsdl:message name="ServicioBuscaLastDetalleCompraSoapOut">
     <wsdl:part name="parameters" element="tns:ServicioBuscaLastDetalleCompraResponse" />
   </wsdl:message>
+  <wsdl:message name="ServicioObtenerStockPorIdDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerStockPorIdDetalle" />
+  </wsdl:message>
+  <wsdl:message name="ServicioObtenerStockPorIdDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioObtenerStockPorIdDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioActualizarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicioActualizarStock" />
+  </wsdl:message>
+  <wsdl:message name="ServicioActualizarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicioActualizarStockResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceStockSoap">
     <wsdl:operation name="ServicioinsertarCompra">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta una compra </wsdl:documentation>
@@ -131,6 +174,16 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Busca la ultima Detallecompra </wsdl:documentation>
       <wsdl:input message="tns:ServicioBuscaLastDetalleCompraSoapIn" />
       <wsdl:output message="tns:ServicioBuscaLastDetalleCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerStockPorIdDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que devuelve un stock por idDetalleCompra</wsdl:documentation>
+      <wsdl:input message="tns:ServicioObtenerStockPorIdDetalleSoapIn" />
+      <wsdl:output message="tns:ServicioObtenerStockPorIdDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicioActualizarStock">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar stock</wsdl:documentation>
+      <wsdl:input message="tns:ServicioActualizarStockSoapIn" />
+      <wsdl:output message="tns:ServicioActualizarStockSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceStockSoap" type="tns:WebServiceStockSoap">
@@ -180,6 +233,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerStockPorIdDetalle">
+      <soap:operation soapAction="http://tempuri.org/ServicioObtenerStockPorIdDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioActualizarStock">
+      <soap:operation soapAction="http://tempuri.org/ServicioActualizarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceStockSoap12" type="tns:WebServiceStockSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -221,6 +292,24 @@
     </wsdl:operation>
     <wsdl:operation name="ServicioBuscaLastDetalleCompra">
       <soap12:operation soapAction="http://tempuri.org/ServicioBuscaLastDetalleCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioObtenerStockPorIdDetalle">
+      <soap12:operation soapAction="http://tempuri.org/ServicioObtenerStockPorIdDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicioActualizarStock">
+      <soap12:operation soapAction="http://tempuri.org/ServicioActualizarStock" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
